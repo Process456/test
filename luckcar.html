@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #licensePlate{
+            width:200px;
+            height:60px;
+            border:1.5px solid #000000;
+            line-height:60px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            margin: 10px auto;
+        }
+        .box{
+            width:300px;
+            margin: 0px auto;
+            border:3px solid #456894;
+        }
+        #shakeBtn{
+            width:50px;
+            height: 30px;
+            display:block;
+            margin:20px auto;
+        }
+        #count{
+            text-align:center;
+
+        }
+    </style>
+</head>
+<body>
+<div class='box'>
+    <p id='licensePlate'></p>
+    <input type='button' value='摇号' id='shakeBtn'/>
+    <p id="count"></p>
+</div>
+<script>
+    var Btn=document.getElementById("shakeBtn");
+    var content=document.getElementById("licensePlate");
+    var cut=document.getElementById("count");
+    var m=3;
+    function luckdraw() {
+        if(m===0){
+            return cut.innerText=" 抽奖次数已用完 ",result;
+        }
+        var eng="QWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+        var headeng="ABCEFGHJK";
+        var Num="";
+       var  b=Math.round(Math.random()*8);
+        for (var i = 0; i < 5; i++) {
+            var n=Math.round(Math.random()*(eng.length-1));
+              Num+=eng.charAt(n);
+        }
+        result="京"+headeng.charAt(b)+Num;
+
+        m--;
+        cut.innerText="抽奖次数剩余 "+m+" 次";
+
+
+        return result;
+
+    }
+    cut.innerText="抽奖次数剩余 "+3+" 次";
+
+    Btn.onclick=function() {
+        content.innerText=luckdraw();
+    }
+
+
+</script>
+</body>
+</html>

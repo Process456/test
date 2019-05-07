@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="reset.min.css">
+    <style>
+
+        #boxOne{
+
+            width:400px;
+            margin:10px auto;
+        }
+        #boxOne ul{
+            position: relative;
+            top:1px;
+        }
+        div ul.box li{
+            cursor: pointer;
+            display: inline-block;
+           line-height:33px;
+            border:1px solid #000000;
+            padding:0 10px;
+        ;
+        }
+        div#boxOne div{
+            display: none;
+            border:1px solid #000000;
+            line-height:140px;
+            wdith:400px;
+            text-align: center;
+        }
+        #boxOne ul li.activeLi{
+            font-weight: blod;
+            border-bottom-color:#ffffff;
+            color: lightcoral;
+        }
+        #boxOne div.activeDiv{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="boxOne">
+        <ul class="box" id="box">
+            <li class="activeLi">新闻</li>
+            <li >报道</li>
+            <li>音乐</li>
+            <li>金三</li>
+        </ul>
+        <div class="activeDiv">今天天气镇海</div>
+        <div >你哈奥咖啡壶</div>
+        <div>色狗is个后i</div>
+        <div>色狗adaw后i</div>
+    </div>
+    <script src="tab.js"></script>
+</body>
+</html>
